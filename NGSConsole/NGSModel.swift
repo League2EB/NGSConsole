@@ -19,7 +19,7 @@ class TokenObject: Mappable {
     }
 }
 
-class ChurchModel: Mappable {
+class NGSTokenModel: Mappable {
     
     var data: String = ""
     var key: String = ""
@@ -36,7 +36,7 @@ class ChurchModel: Mappable {
     }
 }
 
-class ChurchObject: Mappable {
+class NGSObject: Mappable {
     
     var url: String = ""
     var appid: String = ""

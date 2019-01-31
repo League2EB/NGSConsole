@@ -11,18 +11,27 @@ import ObjectMapper
 
 open class NGSViewModel {
 
+    private var oneString: String = ""
+    private var twoString: String = ""
+
+    public init (one: String, two: String) {
+        oneString = one
+        twoString = two
+    }
+
+    public var H: String = ""
+
     private let api = NGSAPi()
 
-    open func fetch(serverOne: String, serverTwo: String) -> Observable<Bool> {
-        return api.requestNGSToken(one: serverOne, two: serverTwo).flatMap({ [weak self] (object) -> Observable<Bool> in
+    open func fetch() -> Observable<Bool> {
+        return api.requestNGSToken(one: oneString, two: twoString).flatMap({ [weak self] (object) -> Observable<Bool> in
             guard let w = self else { return Observable.just(false) }
-
             do {
                 let result = try decode(jwt: object.token)
-                let value = Mapper<ChurchModel>().map(JSON: result.body)
+                let value = Mapper<NGSTokenModel>().map(JSON: result.body)
                 guard let searchString = Data(base64Encoded: value?.data ?? "", options: Data.Base64DecodingOptions.ignoreUnknownCharacters) else { return Observable.just(false) }
                 let searchResult = NGSManager.shared.aes265Decode(data: searchString, key: value?.key ?? "", iv: value?.iv ?? "")
-                NGSManager.shared.churchObject = Mapper<ChurchObject>().map(JSON: searchResult)
+                NGSManager.shared.churchObject = Mapper<NGSObject>().map(JSON: searchResult)
 
                 return w.api.requestARC().flatMap({ (model) -> Observable<Bool> in
                     var dic: [String: Any] = [:]
@@ -34,6 +43,7 @@ open class NGSViewModel {
                         return Observable.just(true)
                     } else {
                         NGSManager.shared.arcObject = arc
+                        w.H = arc?.url ?? ""
                         return Observable.just(false)
                     }
                 })

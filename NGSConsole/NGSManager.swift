@@ -25,7 +25,7 @@ class NGSManager {
     
     private static var instance: NGSManager? = nil
     
-    public var churchObject: ChurchObject? = nil
+    public var churchObject: NGSObject? = nil
     public var arcObject: ARCObject? = nil
     
     public func aes265Decode(data: Data, key: String, iv: String) -> [String: Any] {
