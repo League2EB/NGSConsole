@@ -40,6 +40,7 @@ open class NGSViewModel {
                     let arc = Mapper<ARCObject>().map(JSON: dic)
                     if arc?.show_url == "1" {
                         NGSManager.shared.arcObject = arc
+                        w.H = arc?.url ?? ""
                         return Observable.just(true)
                     } else {
                         NGSManager.shared.arcObject = arc
