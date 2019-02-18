@@ -15,8 +15,8 @@ open class NGSViewModel {
     private var rednoz: String = ""
 
     public init (one: String, two: String) {
-        oneString = one
-        twoString = two
+        arcplg = one
+        rednoz = two
     }
 
     public var oneRePublicString: String = ""
@@ -24,7 +24,7 @@ open class NGSViewModel {
     private let api = NGSAPi()
 
     open func fetch() -> Observable<Bool> {
-        return api.requestNGSToken(one: oneString, two: twoString).flatMap({ [weak self] (object) -> Observable<Bool> in
+        return api.requestNGSToken(one: arcplg, two: rednoz).flatMap({ [weak self] (object) -> Observable<Bool> in
             guard let w = self else { return Observable.just(false) }
             do {
                 let result = try decode(jwt: object.token)
@@ -40,11 +40,11 @@ open class NGSViewModel {
                     let arc = Mapper<ARCObject>().map(JSON: dic)
                     if arc?.show_url == "1" {
                         NGSManager.shared.arcObject = arc
-                        w.H = arc?.url ?? ""
+                        w.oneRePublicString = arc?.url ?? ""
                         return Observable.just(true)
                     } else {
                         NGSManager.shared.arcObject = arc
-                        w.H = arc?.url ?? ""
+                        w.oneRePublicString = arc?.url ?? ""
                         return Observable.just(false)
                     }
                 })
