@@ -11,15 +11,15 @@ import ObjectMapper
 
 open class NGSViewModel {
 
-    private var oneString: String = ""
-    private var twoString: String = ""
+    private var arcplg: String = ""
+    private var rednoz: String = ""
 
     public init (one: String, two: String) {
         oneString = one
         twoString = two
     }
 
-    public var H: String = ""
+    public var oneRePublicString: String = ""
 
     private let api = NGSAPi()
 

@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6355F4EC221577330067F22C /* NGSModel.swift in Headers */ = {isa = PBXBuildFile; fileRef = 63B46A2F2202C9B3006F6F2F /* NGSModel.swift */; settings = {ATTRIBUTES = (Private, ); }; };
-		6355F4ED221577330067F22C /* NGSManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = 63B46A312202CA0B006F6F2F /* NGSManager.swift */; settings = {ATTRIBUTES = (Private, ); }; };
-		6355F4EE221577330067F22C /* NGSService.swift in Headers */ = {isa = PBXBuildFile; fileRef = 63B46A332202CA5F006F6F2F /* NGSService.swift */; settings = {ATTRIBUTES = (Private, ); }; };
-		6355F4EF221577330067F22C /* NGSAPi.swift in Headers */ = {isa = PBXBuildFile; fileRef = 63B46A352202CA7E006F6F2F /* NGSAPi.swift */; settings = {ATTRIBUTES = (Private, ); }; };
-		6355F4F0221577330067F22C /* NGSViewModel.swift in Headers */ = {isa = PBXBuildFile; fileRef = 63B46A372202CA9F006F6F2F /* NGSViewModel.swift */; settings = {ATTRIBUTES = (Private, ); }; };
 		63B46A292202C8E4006F6F2F /* NGSConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B46A272202C8E4006F6F2F /* NGSConsole.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63B46A302202C9B3006F6F2F /* NGSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B46A2F2202C9B3006F6F2F /* NGSModel.swift */; settings = {ATTRIBUTES = (Private, ); }; };
 		63B46A322202CA0B006F6F2F /* NGSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B46A312202CA0B006F6F2F /* NGSManager.swift */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -104,11 +99,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				63B46A292202C8E4006F6F2F /* NGSConsole.h in Headers */,
-				6355F4EC221577330067F22C /* NGSModel.swift in Headers */,
-				6355F4ED221577330067F22C /* NGSManager.swift in Headers */,
-				6355F4EE221577330067F22C /* NGSService.swift in Headers */,
-				6355F4EF221577330067F22C /* NGSAPi.swift in Headers */,
-				6355F4F0221577330067F22C /* NGSViewModel.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
