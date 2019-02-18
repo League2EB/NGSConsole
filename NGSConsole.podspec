@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NGSConsole"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "WTFNGS"
   s.description  = <<-DESC
   A much much longer description of MyFramework.
